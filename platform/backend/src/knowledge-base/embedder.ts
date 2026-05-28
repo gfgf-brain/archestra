@@ -91,6 +91,7 @@ class EmbeddingService {
     } catch (error) {
       await KbDocumentModel.update(documentId, {
         embeddingStatus: "failed",
+        embeddingError: error instanceof Error ? error.message : String(error),
       });
       logger.error(
         {
@@ -194,7 +195,7 @@ class EmbeddingService {
 
     const ctx = orgConfig.config;
     const embeddingResults = new Map<string, number[]>();
-    const failedChunkIds = new Set<string>();
+    const failedChunkErrors = new Map<string, string>();
 
     for (let i = 0; i < allChunks.length; i += EMBEDDING_BATCH_SIZE) {
       const batch = allChunks.slice(i, i + EMBEDDING_BATCH_SIZE);
@@ -221,8 +222,9 @@ class EmbeddingService {
           },
           "[Embedder] Batch embedding API call failed",
         );
+        const errMsg = error instanceof Error ? error.message : String(error);
         for (const chunk of batch) {
-          failedChunkIds.add(chunk.chunkId);
+          failedChunkErrors.set(chunk.chunkId, errMsg);
         }
       }
     }
@@ -236,10 +238,12 @@ class EmbeddingService {
     }
 
     for (const { documentId, chunkIds, chunkCount } of docChunkMap) {
-      const anyFailed = chunkIds.some((id) => failedChunkIds.has(id));
+      const anyFailed = chunkIds.some((id) => failedChunkErrors.has(id));
       if (anyFailed) {
+        const failedChunkId = chunkIds.find((id) => failedChunkErrors.has(id));
         await KbDocumentModel.update(documentId, {
           embeddingStatus: "failed",
+          embeddingError: failedChunkId ? failedChunkErrors.get(failedChunkId)! : null,
         });
         logger.error(
           { documentId, runId: connectorRunId },
@@ -345,3 +349,4 @@ function chunkToEmbeddingInput(
     "search_document",
   );
 }
+
