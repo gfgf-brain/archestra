@@ -137,17 +137,6 @@ Metrics, traces and logs allowing to come to a conclusion about per-org, per-age
 2. ✅ [Terraform provider →](https://github.com/archestra-ai/terraform-provider-archestra)
 3. ✅ [Helm Chart →](https://archestra.ai/docs/platform-deployment#helm-deployment-recommended-for-production)
 
-## 📊 Usage Limits & Cost Control
-
-Archestra provides comprehensive usage limits and cost management features:
-
-- **Granular Limit Controls**: Set usage limits per Virtual Key, User, Agent, LLM Proxy, and Team
-- **Real-time Usage Tracking**: Monitor consumption with progress bars and visual indicators
-- **Smart Limit Selection**: Automatically applies the most restrictive applicable limit to each request
-- **Developer-Friendly Headers**: Custom response headers expose limit details for client-side budgeting
-- **Proactive Alerts**: Toast notifications at 75%, 90%, and 100% usage thresholds
-- **Transparent Visibility**: View all limits across your organization with reset countdowns and detailed breakdowns
-
 ## 🤝 Contributing
 
 We welcome contributions from the community!
@@ -170,3 +159,16 @@ Thank you for contributing and continuously making <b>Archestra</b> better, <b>y
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.archestra.ai/blog/archestra-joins-cncf-linux-foundation"><img src="./docs/assets/cncf-logo.webp" height="50" alt="CNCF" /></a>
 </div>
+
+## Usage Limits & Cost Control
+
+Archestra provides comprehensive usage limits and cost management features:
+
+- **Real-time Usage Tracking**: Monitor token usage, request counts, and API calls across your organization
+- **Granular Limit Controls**: Set limits per Virtual Key, User, Agent, LLM Proxy, and Team
+- **Visual Progress Indicators**: Track usage with progress bars and countdown badges showing when limits reset
+- **Smart Alerts**: Receive warnings at 75% usage, danger alerts at 90%, and notifications when limits are exceeded
+- **Developer-Friendly Headers**: Custom interaction response headers include limit details for building budgeting features in external clients
+- **Comprehensive Visibility**: View remaining usage across all management tables with detailed tooltips and limit breakdowns
+
+For more details, see the [Usage Limits Documentation](https://www.archestra.ai/docs/platform-usage-limits).
