@@ -139,19 +139,13 @@ Metrics, traces and logs allowing to come to a conclusion about per-org, per-age
 
 ## 🔐 Auto Sync Permissions for Knowledge Bases
 
-Archestra now supports automatic synchronization of access control lists (ACLs) from source systems into knowledge bases. This enterprise feature enables fine-grained permission management for Jira and Confluence connectors.
+Archestra now supports automatic synchronization of access control lists (ACLs) from your knowledge connectors. When enabled on a knowledge base, the **Auto Sync Permissions** visibility mode automatically extracts and enforces permission rules from Jira and Confluence during document sync.
 
-**Key Features:**
-- Automatic ACL extraction during connector sync
-- User identity mapping between upstream systems and Archestra
-- Query-time filtering based on user permissions
-- Extensible architecture for adding support to additional connectors
+- **User Identity Mapping**: Permissions are matched between your source system (Jira/Confluence) and Archestra users
+- **Dynamic Access Control**: The `query_knowledge_sources` tool automatically filters documents based on the querying user's upstream permissions
+- **Enterprise Feature**: Available with `ARCHESTRA_ENTERPRISE_LICENSE_KNOWLEDGE_BASE_ACTIVATED`
 
-**Supported Connectors:**
-- Jira
-- Confluence
-
-For detailed documentation on configuring auto-sync permissions, see the [Knowledge Base Permissions Guide](https://www.archestra.ai/docs/knowledge-bases-permissions).
+For more details, see the [Knowledge Base Permissions documentation](https://www.archestra.ai/docs/platform-knowledge-bases-permissions).
 
 ## 🤝 Contributing
 
