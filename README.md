@@ -137,17 +137,6 @@ Metrics, traces and logs allowing to come to a conclusion about per-org, per-age
 2. ✅ [Terraform provider →](https://github.com/archestra-ai/terraform-provider-archestra)
 3. ✅ [Helm Chart →](https://archestra.ai/docs/platform-deployment#helm-deployment-recommended-for-production)
 
-## 📊 Usage Limits & Cost Control
-
-Archestra provides comprehensive usage limits and cost management features:
-
-- **Granular Limit Configuration**: Set usage limits per Virtual Key, User, Agent, LLM Proxy, and Team
-- **Real-time Usage Visibility**: Monitor remaining usage with progress bars and countdown badges across the platform
-- **Smart Limit Selection**: Automatically applies the most restrictive applicable limit to each request
-- **Proactive Alerts**: Toast notifications at 75% (warning), 90% (danger), and 100% (exceeded) usage thresholds
-- **Developer Integration**: Custom response headers (`X-Archestra-Limit-*`) enable budget tracking in external applications
-- **Centralized Management**: Dedicated Limits page with filtering and pre-selected views for entity-specific limits
-
 ## 🤝 Contributing
 
 We welcome contributions from the community!
@@ -170,3 +159,13 @@ Thank you for contributing and continuously making <b>Archestra</b> better, <b>y
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.archestra.ai/blog/archestra-joins-cncf-linux-foundation"><img src="./docs/assets/cncf-logo.webp" height="50" alt="CNCF" /></a>
 </div>
+
+## Usage Limits & Cost Control
+
+Archestra provides granular usage limits and cost controls across your organization:
+
+- **Per-Entity Limits**: Set usage quotas for Virtual Keys, Users, Agents, LLM Proxies, and Teams
+- **Real-time Visibility**: Monitor usage progress with visual indicators and countdown badges
+- **Smart Alerts**: Receive warnings at 75% usage, danger alerts at 90%, and notifications when limits are exceeded
+- **Developer Integration**: Custom response headers (`X-Archestra-Limit-*`) enable budget-aware client implementations
+- **Flexible Configuration**: Create and manage limits directly in entity forms or via the dedicated Limits page
