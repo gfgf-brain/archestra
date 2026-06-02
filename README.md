@@ -137,16 +137,6 @@ Metrics, traces and logs allowing to come to a conclusion about per-org, per-age
 2. ✅ [Terraform provider →](https://github.com/archestra-ai/terraform-provider-archestra)
 3. ✅ [Helm Chart →](https://archestra.ai/docs/platform-deployment#helm-deployment-recommended-for-production)
 
-## 📊 Usage Limits & Cost Control
-
-Archestra provides comprehensive usage limits and cost management features:
-
-- **Granular Limit Controls**: Set usage limits at multiple levels (Virtual Keys, Users, Agents, LLM Proxies, Teams)
-- **Real-time Visibility**: Monitor usage progress with visual indicators and countdown badges
-- **Smart Alerts**: Receive warnings at 75%, 90%, and 100% usage thresholds
-- **Developer-Friendly Headers**: Custom interaction response headers expose limit details for client-side budgeting
-- **Detailed Limit Management**: View all applicable limits with reset schedules and remaining usage across the platform
-
 ## 🤝 Contributing
 
 We welcome contributions from the community!
@@ -169,3 +159,17 @@ Thank you for contributing and continuously making <b>Archestra</b> better, <b>y
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.archestra.ai/blog/archestra-joins-cncf-linux-foundation"><img src="./docs/assets/cncf-logo.webp" height="50" alt="CNCF" /></a>
 </div>
+
+## Usage Limits & Cost Control
+
+Archestra provides comprehensive usage limits and cost management features:
+
+- **Limits Dashboard**: Monitor and configure usage limits across your organization with real-time countdown badges showing when limits reset
+- **Per-Entity Limits**: Set usage restrictions on Virtual Keys, Users, Agents, LLM Proxies, and Teams
+- **Smart Limit Selection**: The platform automatically selects the most restrictive applicable limit for each request
+- **Real-time Alerts**: Receive toast notifications at 75% (warning), 90% (danger), and 100% (exceeded) usage thresholds
+- **Progress Tracking**: Visual progress bars in chat and tables show remaining usage with detailed tooltips
+- **API Headers**: Custom interaction response headers (`X-Archestra-Limit-*`) enable budget tracking in external client applications
+- **Account Overview**: Users can view their remaining limits on the Settings/Your Account page
+
+For detailed configuration, see [Usage Limits Documentation](https://www.archestra.ai/docs/platform-usage-limits).
