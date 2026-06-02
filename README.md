@@ -137,6 +137,22 @@ Metrics, traces and logs allowing to come to a conclusion about per-org, per-age
 2. ✅ [Terraform provider →](https://github.com/archestra-ai/terraform-provider-archestra)
 3. ✅ [Helm Chart →](https://archestra.ai/docs/platform-deployment#helm-deployment-recommended-for-production)
 
+## 🔐 Auto Sync Permissions for Knowledge Bases
+
+Archestra now supports automatic synchronization of access control lists (ACLs) from source systems into knowledge bases. This enterprise feature enables fine-grained permission management for Jira and Confluence connectors.
+
+**Key Features:**
+- Automatic ACL extraction during connector sync
+- User identity mapping between upstream systems and Archestra
+- Query-time filtering based on user permissions
+- Extensible architecture for adding support to additional connectors
+
+**Supported Connectors:**
+- Jira
+- Confluence
+
+For detailed documentation on configuring auto-sync permissions, see the [Knowledge Base Permissions Guide](https://www.archestra.ai/docs/knowledge-bases-permissions).
+
 ## 🤝 Contributing
 
 We welcome contributions from the community!
