@@ -137,16 +137,6 @@ Metrics, traces and logs allowing to come to a conclusion about per-org, per-age
 2. ✅ [Terraform provider →](https://github.com/archestra-ai/terraform-provider-archestra)
 3. ✅ [Helm Chart →](https://archestra.ai/docs/platform-deployment#helm-deployment-recommended-for-production)
 
-## 🔐 Auto Sync Permissions for Knowledge Bases
-
-Archestra now supports automatic synchronization of access control lists (ACLs) from your knowledge connectors. When enabled on a knowledge base, the **Auto Sync Permissions** visibility mode automatically extracts and enforces permission rules from Jira and Confluence during document sync.
-
-- **User Identity Mapping**: Permissions are matched between your source system (Jira/Confluence) and Archestra users
-- **Dynamic Access Control**: The `query_knowledge_sources` tool automatically filters documents based on the querying user's upstream permissions
-- **Enterprise Feature**: Available with `ARCHESTRA_ENTERPRISE_LICENSE_KNOWLEDGE_BASE_ACTIVATED`
-
-For more details, see the [Knowledge Base Permissions documentation](https://www.archestra.ai/docs/platform-knowledge-bases-permissions).
-
 ## 🤝 Contributing
 
 We welcome contributions from the community!
@@ -169,3 +159,34 @@ Thank you for contributing and continuously making <b>Archestra</b> better, <b>y
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.archestra.ai/blog/archestra-joins-cncf-linux-foundation"><img src="./docs/assets/cncf-logo.webp" height="50" alt="CNCF" /></a>
 </div>
+
+## Auto Sync Permissions for Knowledge Bases
+
+Archestra now supports automatic synchronization of access control lists (ACLs) from source systems into knowledge bases. This enterprise feature enables fine-grained permission management for Jira and Confluence connectors.
+
+### Supported Connectors
+
+- **Jira** — Syncs issue-level permissions and project access
+- **Confluence** — Syncs page and space-level permissions
+
+### How It Works
+
+When a knowledge base is configured with **Auto Sync Permissions** visibility mode:
+
+1. During connector sync, ACL data is extracted from the upstream system (Jira/Confluence)
+2. User identity mapping matches users between the source system and Archestra (team-based, user-based, or hybrid)
+3. The `query_knowledge_sources` tool automatically filters chunks based on the querying user's permissions
+4. Only documents the user can access in the upstream system are returned in knowledge base queries
+
+### Configuration
+
+Enable this feature by:
+
+1. Creating a knowledge base with visibility mode set to **Auto Sync Permissions**
+2. Configuring a Jira or Confluence connector
+3. Setting up user identity mapping (via teams or user attributes)
+4. Running a sync to extract and cache ACL data
+
+### Enterprise License
+
+This feature requires `ARCHESTRA_ENTERPRISE_LICENSE_KNOWLEDGE_BASE_ACTIVATED`. RAG functionality remains available in the open-source version.
