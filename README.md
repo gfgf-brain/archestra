@@ -137,6 +137,17 @@ Metrics, traces and logs allowing to come to a conclusion about per-org, per-age
 2. ✅ [Terraform provider →](https://github.com/archestra-ai/terraform-provider-archestra)
 3. ✅ [Helm Chart →](https://archestra.ai/docs/platform-deployment#helm-deployment-recommended-for-production)
 
+## 📊 Usage Limits & Cost Control
+
+Archestra provides comprehensive usage limits and cost management features:
+
+- **Granular Limit Controls**: Set usage limits per Virtual Key, User, Agent, LLM Proxy, and Team
+- **Real-time Usage Tracking**: Monitor consumption with progress bars and visual indicators
+- **Smart Limit Selection**: Automatically applies the most restrictive applicable limit to each request
+- **Developer-Friendly Headers**: Custom response headers expose limit details for client-side budgeting
+- **Proactive Alerts**: Toast notifications at 75%, 90%, and 100% usage thresholds
+- **Transparent Visibility**: View all limits across your organization with reset countdowns and detailed breakdowns
+
 ## 🤝 Contributing
 
 We welcome contributions from the community!
