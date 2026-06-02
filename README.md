@@ -159,3 +159,21 @@ Thank you for contributing and continuously making <b>Archestra</b> better, <b>y
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.archestra.ai/blog/archestra-joins-cncf-linux-foundation"><img src="./docs/assets/cncf-logo.webp" height="50" alt="CNCF" /></a>
 </div>
+
+## Recent Improvements
+
+### Enhanced File Upload Error Handling (v1.2.51+)
+
+Improved user experience for Knowledge/Connectors file upload failures by providing detailed error messages:
+
+- **Embedding Error Classification**: Errors are now categorized and mapped to human-readable messages
+- **Supported Error Types**:
+  - Rate limit exceeded
+  - API authentication failures (401, 403)
+  - Model configuration errors
+  - Dimension mismatch detection
+  - Server errors (5xx)
+  - Unknown failures with guidance
+- **Tooltip Support**: Hover over failed upload status to see detailed error information
+
+This helps users quickly diagnose and resolve upload issues without repeated retry attempts.
